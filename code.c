@@ -1,11 +1,4 @@
-/*
-  Created by: Julianne Leblanc-Peltier
-  Created on: June 2025
-  This program (will eventually) counts up on 2 seven segment displays
-  TEJ3M AND ICS3U RST
-*/
-
-// pin var for 1st seven segment display
+// first 7 segment display
 unsigned const int AA = 13;
 unsigned const int AB = 12;
 unsigned const int AC = 11;
@@ -13,164 +6,322 @@ unsigned const int AD = 10;
 unsigned const int AE = 9;
 unsigned const int AF = 8;
 unsigned const int AG = 7;
-unsigned const int AH = 6;
+
+// second 7 segment display
+unsigned const int BA = 6;
+unsigned const int BB = 5;
+unsigned const int BC = 4;
+unsigned const int BD = 3;
+unsigned const int BE = 2;
+unsigned const int BF = 1;
+unsigned const int BG = 0;
 
 
+// switch var
+unsigned const int SWITCH = 15;
 
 void setup(void)
 {
-  pinMode(A, OUTPUT);
-  pinMode(B, OUTPUT);
-  pinMode(C, OUTPUT);
-  pinMode(D, OUTPUT);
-  pinMode(E, OUTPUT);
-  pinMode(F, OUTPUT);
-  pinMode(G, OUTPUT);
-  pinMode(H, OUTPUT);
+  pinMode(AA, OUTPUT);
+  pinMode(AB, OUTPUT);
+  pinMode(AC, OUTPUT);
+  pinMode(AD, OUTPUT);
+  pinMode(AE, OUTPUT);
+  pinMode(AF, OUTPUT);
+  pinMode(AG, OUTPUT);
+  pinMode(BA, OUTPUT);
+  pinMode(BB, OUTPUT);
+  pinMode(BC, OUTPUT);
+  pinMode(BD, OUTPUT);
+  pinMode(BE, OUTPUT);
+  pinMode(BF, OUTPUT);
+  pinMode(BG, OUTPUT);
+  pinMode(SWITCH, INPUT);
 }
 
-//My Functions
+// functions for 1st 7SD
 
-void zero(void) {
-  digitalWrite(A, LOW);
-  digitalWrite(B, HIGH);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, HIGH);
-  digitalWrite(E, HIGH);
-  digitalWrite(F, HIGH);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_zero(void) {
+  digitalWrite(AA, LOW);
+  digitalWrite(AB, HIGH);
+  digitalWrite(AC, HIGH);
+  digitalWrite(AD, HIGH);
+  digitalWrite(AE, HIGH);
+  digitalWrite(AF, HIGH);
+  digitalWrite(AG, HIGH);
 }
 
-void one(void) {
-  digitalWrite(A, LOW);
-  digitalWrite(B, LOW);
-  digitalWrite(C, LOW);
-  digitalWrite(D, HIGH);
-  digitalWrite(E, LOW);
-  digitalWrite(F, LOW);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_one(void) {
+  digitalWrite(AA, LOW);
+  digitalWrite(AB, LOW);
+  digitalWrite(AC, LOW);
+  digitalWrite(AD, HIGH);
+  digitalWrite(AE, LOW);
+  digitalWrite(AF, LOW);
+  digitalWrite(AG, HIGH);
 }
 
-void two(void) {
-  digitalWrite(A, HIGH);
-  digitalWrite(B, LOW);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, HIGH);
-  digitalWrite(E, HIGH);
-  digitalWrite(F, HIGH);
-  digitalWrite(G, LOW);
-  digitalWrite(H, LOW);
+void a_two(void) {
+  digitalWrite(AA, HIGH);
+  digitalWrite(AB, LOW);
+  digitalWrite(AC, HIGH);
+  digitalWrite(AD, HIGH);
+  digitalWrite(AE, HIGH);
+  digitalWrite(AF, HIGH);
+  digitalWrite(AG, LOW);
 }
 
-void three(void) {
-  digitalWrite(A, HIGH);
-  digitalWrite(B, LOW);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, HIGH);
-  digitalWrite(E, LOW);
-  digitalWrite(F, HIGH);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_three(void) {
+  digitalWrite(AA, HIGH);
+  digitalWrite(AB, LOW);
+  digitalWrite(AC, HIGH);
+  digitalWrite(AD, HIGH);
+  digitalWrite(AE, LOW);
+  digitalWrite(AF, HIGH);
+  digitalWrite(AG, HIGH);
 }
 
-void four(void) {
-  digitalWrite(A, HIGH);
-  digitalWrite(B, HIGH);
-  digitalWrite(C, LOW);
-  digitalWrite(D, HIGH);
-  digitalWrite(E, LOW);
-  digitalWrite(F, LOW);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_four(void) {
+  digitalWrite(AA, HIGH);
+  digitalWrite(AB, HIGH);
+  digitalWrite(AC, LOW);
+  digitalWrite(AD, HIGH);
+  digitalWrite(AE, LOW);
+  digitalWrite(AF, LOW);
+  digitalWrite(AG, HIGH);
 }
 
-void five(void) {
-  digitalWrite(A, HIGH);
-  digitalWrite(B, HIGH);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, LOW);
-  digitalWrite(E, LOW);
-  digitalWrite(F, HIGH);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_five(void) {
+  digitalWrite(AA, HIGH);
+  digitalWrite(AB, HIGH);
+  digitalWrite(AC, HIGH);
+  digitalWrite(AD, LOW);
+  digitalWrite(AE, LOW);
+  digitalWrite(AF, HIGH);
+  digitalWrite(AG, HIGH);
 }
 
-void six(void) {
-  digitalWrite(A, HIGH);
-  digitalWrite(B, HIGH);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, LOW);
-  digitalWrite(E, HIGH);
-  digitalWrite(F, HIGH);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_six(void) {
+  digitalWrite(AA, HIGH);
+  digitalWrite(AB, HIGH);
+  digitalWrite(AC, HIGH);
+  digitalWrite(AD, LOW);
+  digitalWrite(AE, HIGH);
+  digitalWrite(AF, HIGH);
+  digitalWrite(AG, HIGH);
 }
 
-void seven(void) {
-  digitalWrite(A, LOW);
-  digitalWrite(B, LOW);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, HIGH);
-  digitalWrite(E, LOW);
-  digitalWrite(F, LOW);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_seven(void) {
+  digitalWrite(AA, LOW);
+  digitalWrite(AB, LOW);
+  digitalWrite(AC, HIGH);
+  digitalWrite(AD, HIGH);
+  digitalWrite(AE, LOW);
+  digitalWrite(AF, LOW);
+  digitalWrite(AG, HIGH);
 }
 
-void eight(void) {
-  digitalWrite(A, HIGH);
-  digitalWrite(B, HIGH);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, HIGH);
-  digitalWrite(E, HIGH);
-  digitalWrite(F, HIGH);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_eight(void) {
+  digitalWrite(AA, HIGH);
+  digitalWrite(AB, HIGH);
+  digitalWrite(AC, HIGH);
+  digitalWrite(AD, HIGH);
+  digitalWrite(AE, HIGH);
+  digitalWrite(AF, HIGH);
+  digitalWrite(AG, HIGH);
 }
 
-void nine(void) {
-  digitalWrite(A, HIGH);
-  digitalWrite(B, HIGH);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, HIGH);
-  digitalWrite(E, LOW);
-  digitalWrite(F, HIGH);
-  digitalWrite(G, HIGH);
-  digitalWrite(H, LOW);
+void a_nine(void) {
+  digitalWrite(AA, HIGH);
+  digitalWrite(AB, HIGH);
+  digitalWrite(AC, HIGH);
+  digitalWrite(AD, HIGH);
+  digitalWrite(AE, LOW);
+  digitalWrite(AF, HIGH);
+  digitalWrite(AG, HIGH);
+}
+
+void a_off(void) {
+  digitalWrite(AA, LOW);
+  digitalWrite(AB, LOW);
+  digitalWrite(AC, LOW);
+  digitalWrite(AD, LOW);
+  digitalWrite(AE, LOW);
+  digitalWrite(AF, LOW);
+  digitalWrite(AG, LOW);
+}
+
+// functions for 2nd 7SD
+void b_zero(void) {
+  digitalWrite(BA, LOW);
+  digitalWrite(BB, HIGH);
+  digitalWrite(BC, HIGH);
+  digitalWrite(BD, HIGH);
+  digitalWrite(BE, HIGH);
+  digitalWrite(BF, HIGH);
+  digitalWrite(BG, HIGH);
+}
+
+void b_one(void) {
+  digitalWrite(BA, LOW);
+  digitalWrite(BB, LOW);
+  digitalWrite(BC, LOW);
+  digitalWrite(BD, HIGH);
+  digitalWrite(BE, LOW);
+  digitalWrite(BF, LOW);
+  digitalWrite(BG, HIGH);
+}
+
+void b_two(void) {
+  digitalWrite(BA, HIGH);
+  digitalWrite(BB, LOW);
+  digitalWrite(BC, HIGH);
+  digitalWrite(BD, HIGH);
+  digitalWrite(BE, HIGH);
+  digitalWrite(BF, HIGH);
+  digitalWrite(BG, LOW);
+}
+
+void b_three(void) {
+  digitalWrite(BA, HIGH);
+  digitalWrite(BB, LOW);
+  digitalWrite(BC, HIGH);
+  digitalWrite(BD, HIGH);
+  digitalWrite(BE, LOW);
+  digitalWrite(BF, HIGH);
+  digitalWrite(BG, HIGH);
+}
+
+void b_four(void) {
+  digitalWrite(BA, HIGH);
+  digitalWrite(BB, HIGH);
+  digitalWrite(BC, LOW);
+  digitalWrite(BD, HIGH);
+  digitalWrite(BE, LOW);
+  digitalWrite(BF, LOW);
+  digitalWrite(BG, HIGH);
+}
+
+void b_five(void) {
+  digitalWrite(BA, HIGH);
+  digitalWrite(BB, HIGH);
+  digitalWrite(BC, HIGH);
+  digitalWrite(BD, LOW);
+  digitalWrite(BE, LOW);
+  digitalWrite(BF, HIGH);
+  digitalWrite(BG, HIGH);
+}
+
+void b_six(void) {
+  digitalWrite(BA, HIGH);
+  digitalWrite(BB, HIGH);
+  digitalWrite(BC, HIGH);
+  digitalWrite(BD, LOW);
+  digitalWrite(BE, HIGH);
+  digitalWrite(BF, HIGH);
+  digitalWrite(BG, HIGH);
+}
+
+void b_seven(void) {
+  digitalWrite(BA, LOW);
+  digitalWrite(BB, LOW);
+  digitalWrite(BC, HIGH);
+  digitalWrite(BD, HIGH);
+  digitalWrite(BE, LOW);
+  digitalWrite(BF, LOW);
+  digitalWrite(BG, HIGH);
+}
+
+void b_eight(void) {
+  digitalWrite(BA, HIGH);
+  digitalWrite(BB, HIGH);
+  digitalWrite(BC, HIGH);
+  digitalWrite(BD, HIGH);
+  digitalWrite(BE, HIGH);
+  digitalWrite(BF, HIGH);
+  digitalWrite(BG, HIGH);
+}
+
+void b_nine(void) {
+  digitalWrite(BA, HIGH);
+  digitalWrite(BB, HIGH);
+  digitalWrite(BC, HIGH);
+  digitalWrite(BD, HIGH);
+  digitalWrite(BE, LOW);
+  digitalWrite(BF, HIGH);
+  digitalWrite(BG, HIGH);
+}
+
+void b_off(void) {
+  digitalWrite(BA, LOW);
+  digitalWrite(BB, LOW);
+  digitalWrite(BC, LOW);
+  digitalWrite(BD, LOW);
+  digitalWrite(BE, LOW);
+  digitalWrite(BF, LOW);
+  digitalWrite(BG, LOW);
 }
 
 // Start
-void loop(void)
-{
-  zero();
-  delay(1000);
+void loop(void) {
+  int switchValue = digitalRead(SWITCH);
+  int secondsCounter;
+  int decasecondCounter;
   
-  one();
-  delay(1000);
-  
-  two();
-  delay(1000);
-  
-  three();
-  delay(1000);
-  
-  four();
-  delay(1000);
-  
-  five();
-  delay(1000);
-  
-  six();
-  delay(1000);
-  
-  seven();
-  delay(1000);
-  
-  eight();
-  delay(1000);
-  
-  nine();
-  delay(1000);
+  if (switchValue == HIGH) {
+    for (decasecondCounter = 0; decasecondCounter < 10; decasecondCounter ++) {
+      if (decasecondCounter == 0) {
+      	a_zero();
+      } else if (decasecondCounter == 1) {
+      	a_one();
+      } else if (decasecondCounter == 2) {
+      	a_two();
+      } else if (decasecondCounter == 3) {
+      	a_three();
+      } else if (decasecondCounter == 4) {
+      	a_four();
+      } else if (decasecondCounter == 5) {
+      	a_five();
+      } else if (decasecondCounter == 6) {
+      	a_six();
+      } else if (decasecondCounter == 7) {
+      	a_seven();
+      } else if (decasecondCounter == 8) {
+      	a_eight();
+      } else if (decasecondCounter == 9) {
+      	a_nine();
+      }
+
+      for (secondsCounter = 0; secondsCounter < 10; secondsCounter ++)
+        if (secondsCounter == 0) {
+      		b_zero();
+      	} else if (secondsCounter == 1) {
+      		b_one();
+      	} else if (secondsCounter == 2) {
+      		b_two();
+      	} else if (secondsCounter == 3) {
+      		b_three();
+      	} else if (secondsCounter == 4) {
+      		b_four();
+      	} else if (secondsCounter == 5) {
+      		b_five();
+      	} else if (secondsCounter == 6) {
+      		b_six();
+      	} else if (secondsCounter == 7) {
+      		b_seven();
+      	} else if (secondsCounter == 8) {
+      		b_eight();
+      	} else if (secondsCounter == 9) {
+      		b_nine();
+      	}
+      	delay(1000);
+      }
+      delay(1000);
+    }
+    a_off();
+    b_off();
+  } else {
+  	a_off();
+  	b_off();
+  }
 }
