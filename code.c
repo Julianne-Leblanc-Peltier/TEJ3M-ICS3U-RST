@@ -1,3 +1,10 @@
+/* 
+ * Created by Julianne Leblanc-Peltier
+ * Created on June 2025
+ * This program uses two 7 segment displays (7SD) to count up to 99 continuously in for loop
+*/
+
+
 // first 7 segment display
 unsigned const int AA = 13;
 unsigned const int AB = 12;
@@ -20,6 +27,7 @@ unsigned const int BG = 0;
 // switch var
 unsigned const int SWITCH = 15;
 
+// set up
 void setup(void)
 {
   pinMode(AA, OUTPUT);
@@ -41,6 +49,7 @@ void setup(void)
 
 // functions for 1st 7SD
 
+// turns on/off certain LEDs on 1st 7SD to display '0'
 void a_zero(void) {
   digitalWrite(AA, LOW);
   digitalWrite(AB, HIGH);
@@ -51,6 +60,7 @@ void a_zero(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '1'
 void a_one(void) {
   digitalWrite(AA, LOW);
   digitalWrite(AB, LOW);
@@ -61,6 +71,7 @@ void a_one(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '2'
 void a_two(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, LOW);
@@ -71,6 +82,7 @@ void a_two(void) {
   digitalWrite(AG, LOW);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '3'
 void a_three(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, LOW);
@@ -81,6 +93,7 @@ void a_three(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '4'
 void a_four(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
@@ -91,6 +104,7 @@ void a_four(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '5'
 void a_five(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
@@ -101,6 +115,7 @@ void a_five(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '6'
 void a_six(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
@@ -111,6 +126,7 @@ void a_six(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '7'
 void a_seven(void) {
   digitalWrite(AA, LOW);
   digitalWrite(AB, LOW);
@@ -121,6 +137,7 @@ void a_seven(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '8'
 void a_eight(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
@@ -131,6 +148,7 @@ void a_eight(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns on/off certain LEDs on 1st 7SD to display '9'
 void a_nine(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
@@ -141,6 +159,7 @@ void a_nine(void) {
   digitalWrite(AG, HIGH);
 }
 
+// turns all LEDs on 1st 7SD off
 void a_off(void) {
   digitalWrite(AA, LOW);
   digitalWrite(AB, LOW);
@@ -152,6 +171,8 @@ void a_off(void) {
 }
 
 // functions for 2nd 7SD
+
+// turns on/off certain LEDs on 2nd 7SD to display '0'
 void b_zero(void) {
   digitalWrite(BA, LOW);
   digitalWrite(BB, HIGH);
@@ -162,6 +183,7 @@ void b_zero(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '1'
 void b_one(void) {
   digitalWrite(BA, LOW);
   digitalWrite(BB, LOW);
@@ -172,6 +194,7 @@ void b_one(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '2'
 void b_two(void) {
   digitalWrite(BA, HIGH);
   digitalWrite(BB, LOW);
@@ -182,6 +205,7 @@ void b_two(void) {
   digitalWrite(BG, LOW);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '3'
 void b_three(void) {
   digitalWrite(BA, HIGH);
   digitalWrite(BB, LOW);
@@ -192,6 +216,7 @@ void b_three(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '4'
 void b_four(void) {
   digitalWrite(BA, HIGH);
   digitalWrite(BB, HIGH);
@@ -202,6 +227,7 @@ void b_four(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '5'
 void b_five(void) {
   digitalWrite(BA, HIGH);
   digitalWrite(BB, HIGH);
@@ -212,6 +238,7 @@ void b_five(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '6'
 void b_six(void) {
   digitalWrite(BA, HIGH);
   digitalWrite(BB, HIGH);
@@ -222,6 +249,7 @@ void b_six(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '7'
 void b_seven(void) {
   digitalWrite(BA, LOW);
   digitalWrite(BB, LOW);
@@ -232,6 +260,7 @@ void b_seven(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '8'
 void b_eight(void) {
   digitalWrite(BA, HIGH);
   digitalWrite(BB, HIGH);
@@ -242,6 +271,7 @@ void b_eight(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns on/off certain LEDs on 2nd 7SD to display '9'
 void b_nine(void) {
   digitalWrite(BA, HIGH);
   digitalWrite(BB, HIGH);
@@ -252,6 +282,7 @@ void b_nine(void) {
   digitalWrite(BG, HIGH);
 }
 
+// turns off all LEDs on 2nd 7SD 
 void b_off(void) {
   digitalWrite(BA, LOW);
   digitalWrite(BB, LOW);
@@ -263,11 +294,18 @@ void b_off(void) {
 }
 
 void loop(void) {
+  // creates loop counting up using both 7SDs
+
+  // var to read state of switch
   int switchValue = digitalRead(SWITCH);
+  
+  // declare counters
   int secondsCounter;
   int decasecondCounter;
   
+  // will start loop/counting only IF the switch is switched to power
   if (switchValue == HIGH) {
+    // nested loops, counts + displays seconds first then decaseconds
     for (decasecondCounter = 0; decasecondCounter < 10; decasecondCounter ++) {
       switchValue = digitalRead(SWITCH);
       if (switchValue == HIGH) {
@@ -318,6 +356,7 @@ void loop(void) {
             }
             delay(1000);
           } else {
+            // this else statement checks value of switch throughout loop, allows 7SDs to turn off at any point during program
             secondsCounter = 0;
             a_off();
             b_off();
