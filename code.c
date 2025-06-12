@@ -50,130 +50,132 @@ void setup(void)
 // functions for 1st 7SD
 
 // turns on/off certain LEDs on 1st 7SD to display '0'
-void zero(void) {
-  digitalWrite(AA, LOW);
-  digitalWrite(AB, HIGH);
-  digitalWrite(AC, HIGH);
-  digitalWrite(AD, HIGH);
-  digitalWrite(AE, HIGH);
-  digitalWrite(AF, HIGH);
-  digitalWrite(AG, HIGH);
+void zero(int arrayOfPins[]) {
+
+  digitalWrite(arrayOfPins[0], LOW);
+  digitalWrite(arrayOfPins[1], HIGH);
+  digitalWrite(arrayOfPins[2], HIGH);
+  digitalWrite(arrayOfPins[3], HIGH);
+  digitalWrite(arrayOfPins[4], HIGH);
+  digitalWrite(arrayOfPins[5], HIGH);
+  digitalWrite(arrayOfPins[6], HIGH);
+
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '1'
-void one(void) {
-  digitalWrite(AA, LOW);
-  digitalWrite(AB, LOW);
-  digitalWrite(AC, LOW);
-  digitalWrite(AD, HIGH);
-  digitalWrite(AE, LOW);
-  digitalWrite(AF, LOW);
-  digitalWrite(AG, HIGH);
+void one(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], LOW);
+  digitalWrite(arrayOfPins[1], LOW);
+  digitalWrite(arrayOfPins[2], LOW);
+  digitalWrite(arrayOfPins[3], HIGH);
+  digitalWrite(arrayOfPins[4], LOW);
+  digitalWrite(arrayOfPins[5], LOW);
+  digitalWrite(arrayOfPins[6], HIGH);
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '2'
-void two(void) {
-  digitalWrite(AA, HIGH);
-  digitalWrite(AB, LOW);
-  digitalWrite(AC, HIGH);
-  digitalWrite(AD, HIGH);
-  digitalWrite(AE, HIGH);
-  digitalWrite(AF, HIGH);
-  digitalWrite(AG, LOW);
+void two(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], HIGH);
+  digitalWrite(arrayOfPins[1], LOW);
+  digitalWrite(arrayOfPins[2], HIGH);
+  digitalWrite(arrayOfPins[3], HIGH);
+  digitalWrite(arrayOfPins[4], HIGH);
+  digitalWrite(arrayOfPins[5], HIGH);
+  digitalWrite(arrayOfPins[6], LOW);
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '3'
-void three(void) {
-  digitalWrite(AA, HIGH);
-  digitalWrite(AB, LOW);
-  digitalWrite(AC, HIGH);
-  digitalWrite(AD, HIGH);
-  digitalWrite(AE, LOW);
-  digitalWrite(AF, HIGH);
-  digitalWrite(AG, HIGH);
+void three(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], HIGH);
+  digitalWrite(arrayOfPins[1], LOW);
+  digitalWrite(arrayOfPins[2], HIGH);
+  digitalWrite(arrayOfPins[3], HIGH);
+  digitalWrite(arrayOfPins[4], LOW);
+  digitalWrite(arrayOfPins[5], HIGH);
+  digitalWrite(arrayOfPins[6], HIGH);
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '4'
-void four(void) {
-  digitalWrite(AA, HIGH);
-  digitalWrite(AB, HIGH);
-  digitalWrite(AC, LOW);
-  digitalWrite(AD, HIGH);
-  digitalWrite(AE, LOW);
-  digitalWrite(AF, LOW);
-  digitalWrite(AG, HIGH);
+void four(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], HIGH);
+  digitalWrite(arrayOfPins[1], HIGH);
+  digitalWrite(arrayOfPins[2], LOW);
+  digitalWrite(arrayOfPins[3], HIGH);
+  digitalWrite(arrayOfPins[4], LOW);
+  digitalWrite(arrayOfPins[5], LOW);
+  digitalWrite(arrayOfPins[6], HIGH);
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '5'
-void five(void) {
-  digitalWrite(AA, HIGH);
-  digitalWrite(AB, HIGH);
-  digitalWrite(AC, HIGH);
-  digitalWrite(AD, LOW);
-  digitalWrite(AE, LOW);
-  digitalWrite(AF, HIGH);
-  digitalWrite(AG, HIGH);
+void five(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], HIGH);
+  digitalWrite(arrayOfPins[1], HIGH);
+  digitalWrite(arrayOfPins[2], HIGH);
+  digitalWrite(arrayOfPins[3], LOW);
+  digitalWrite(arrayOfPins[4], LOW);
+  digitalWrite(arrayOfPins[5], HIGH);
+  digitalWrite(arrayOfPins[6], HIGH);
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '6'
-void six(void) {
-  digitalWrite(AA, HIGH);
-  digitalWrite(AB, HIGH);
-  digitalWrite(AC, HIGH);
-  digitalWrite(AD, LOW);
-  digitalWrite(AE, HIGH);
-  digitalWrite(AF, HIGH);
-  digitalWrite(AG, HIGH);
+void six(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], HIGH);
+  digitalWrite(arrayOfPins[1], HIGH);
+  digitalWrite(arrayOfPins[2], HIGH);
+  digitalWrite(arrayOfPins[3], LOW);
+  digitalWrite(arrayOfPins[4], HIGH);
+  digitalWrite(arrayOfPins[5], HIGH);
+  digitalWrite(arrayOfPins[6], HIGH);
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '7'
-void seven(void) {
-  digitalWrite(AA, LOW);
-  digitalWrite(AB, LOW);
-  digitalWrite(AC, HIGH);
-  digitalWrite(AD, HIGH);
-  digitalWrite(AE, LOW);
-  digitalWrite(AF, LOW);
-  digitalWrite(AG, HIGH);
+void seven(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], LOW);
+  digitalWrite(arrayOfPins[1], LOW);
+  digitalWrite(arrayOfPins[2], HIGH);
+  digitalWrite(arrayOfPins[3], HIGH);
+  digitalWrite(arrayOfPins[4], LOW);
+  digitalWrite(arrayOfPins[5], LOW);
+  digitalWrite(arrayOfPins[6], HIGH);
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '8'
-void eight(void) {
-  digitalWrite(AA, HIGH);
-  digitalWrite(AB, HIGH);
-  digitalWrite(AC, HIGH);
-  digitalWrite(AD, HIGH);
-  digitalWrite(AE, HIGH);
-  digitalWrite(AF, HIGH);
-  digitalWrite(AG, HIGH);
+void eight(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], HIGH);
+  digitalWrite(arrayOfPins[1], HIGH);
+  digitalWrite(arrayOfPins[2], HIGH);
+  digitalWrite(arrayOfPins[3], HIGH);
+  digitalWrite(arrayOfPins[4], HIGH);
+  digitalWrite(arrayOfPins[5], HIGH);
+  digitalWrite(arrayOfPins[6], HIGH);
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '9'
-void nine(void) {
-  digitalWrite(AA, HIGH);
-  digitalWrite(AB, HIGH);
-  digitalWrite(AC, HIGH);
-  digitalWrite(AD, HIGH);
-  digitalWrite(AE, LOW);
-  digitalWrite(AF, HIGH);
-  digitalWrite(AG, HIGH);
+void nine(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], HIGH);
+  digitalWrite(arrayOfPins[1], HIGH);
+  digitalWrite(arrayOfPins[2], HIGH);
+  digitalWrite(arrayOfPins[3], HIGH);
+  digitalWrite(arrayOfPins[4], LOW);
+  digitalWrite(arrayOfPins[5], HIGH);
+  digitalWrite(arrayOfPins[6], HIGH);
 }
 
 // turns all LEDs on 1st 7SD off
-void off(void) {
-  digitalWrite(AA, LOW);
-  digitalWrite(AB, LOW);
-  digitalWrite(AC, LOW);
-  digitalWrite(AD, LOW);
-  digitalWrite(AE, LOW);
-  digitalWrite(AF, LOW);
-  digitalWrite(AG, LOW);
+void off(int arrayOfPins[]) {
+  digitalWrite(arrayOfPins[0], LOW);
+  digitalWrite(arrayOfPins[1], LOW);
+  digitalWrite(arrayOfPins[2], LOW);
+  digitalWrite(arrayOfPins[3], LOW);
+  digitalWrite(arrayOfPins[4], LOW);
+  digitalWrite(arrayOfPins[5], LOW);
+  digitalWrite(arrayOfPins[6], LOW);
 }
 
 void loop(void) {
   // creates loop counting up using both 7SDs
 
-  // var to read state of switch
+  // var to rearrayOfPins[3] state of switch
   int switchValue = digitalRead(SWITCH);
   
   // declare counters
@@ -184,67 +186,67 @@ void loop(void) {
   if (switchValue == HIGH) {
     // nested loops, counts + displays seconds first then decaseconds
     for (decasecondCounter = 0; decasecondCounter < 10; decasecondCounter ++) {
+      int arrayOfPins[] = {AA, AB, AC, AD, AE, AF, AG};
       switchValue = digitalRead(SWITCH);
       if (switchValue == HIGH) {
         if (decasecondCounter == 0) {
-          a_zero();
+          zero(arrayOfPins);
         } else if (decasecondCounter == 1) {
-          a_one();
+          one(arrayOfPins);
         } else if (decasecondCounter == 2) {
-          a_two();
+          two(arrayOfPins);
         } else if (decasecondCounter == 3) {
-          a_three();
+          three(arrayOfPins);
         } else if (decasecondCounter == 4) {
-          a_four();
+          four(arrayOfPins);
         } else if (decasecondCounter == 5) {
-          a_five();
+          five(arrayOfPins);
         } else if (decasecondCounter == 6) {
-          a_six();
+          six(arrayOfPins);
         } else if (decasecondCounter == 7) {
-          a_seven();
+          seven(arrayOfPins);
         } else if (decasecondCounter == 8) {
-          a_eight();
+          eight(arrayOfPins);
         } else if (decasecondCounter == 9) {
-          a_nine();
+          nine(arrayOfPins);
         }
         for (secondsCounter = 0; secondsCounter < 10; secondsCounter ++) {
+          int arrayOfPins[] = {BA, BB, BC, BD, BE, BF, BG};
           switchValue = digitalRead(SWITCH);
           if (switchValue == HIGH) {
             if (secondsCounter == 0) {
-                b_zero();
+                zero(arrayOfPins);
             } else if (secondsCounter == 1) {
-                b_one();
+                one(arrayOfPins);
             } else if (secondsCounter == 2) {
-                b_two();
+                two(arrayOfPins);
             } else if (secondsCounter == 3) {
-                b_three();
+                three(arrayOfPins);
             } else if (secondsCounter == 4) {
-                b_four();
+                four(arrayOfPins);
             } else if (secondsCounter == 5) {
-                b_five();
+                five(arrayOfPins);
             } else if (secondsCounter == 6) {
-                b_six();
+                six(arrayOfPins);
             } else if (secondsCounter == 7) {
-                b_seven();
+                seven(arrayOfPins);
             } else if (secondsCounter == 8) {
-                b_eight();
+                eight(arrayOfPins);
             } else if (secondsCounter == 9) {
-                b_nine();
+                nine(arrayOfPins);
             }
             delay(1000);
           } else {
             // this else statement checks value of switch throughout loop, allows 7SDs to turn off at any point during program
             secondsCounter = 0;
-            a_off();
-            b_off();
+            off(arrayOfPins);
             break;
           }
         }
       } else {
         decasecondCounter = 0;
         secondsCounter = 0;
-        a_off();
-        b_off();
+        off(arrayOfPins);
         break;
       }
     }
