@@ -50,7 +50,7 @@ void setup(void)
 // functions for 1st 7SD
 
 // turns on/off certain LEDs on 1st 7SD to display '0'
-void a_zero(void) {
+void zero(void) {
   digitalWrite(AA, LOW);
   digitalWrite(AB, HIGH);
   digitalWrite(AC, HIGH);
@@ -61,7 +61,7 @@ void a_zero(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '1'
-void a_one(void) {
+void one(void) {
   digitalWrite(AA, LOW);
   digitalWrite(AB, LOW);
   digitalWrite(AC, LOW);
@@ -72,7 +72,7 @@ void a_one(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '2'
-void a_two(void) {
+void two(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, LOW);
   digitalWrite(AC, HIGH);
@@ -83,7 +83,7 @@ void a_two(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '3'
-void a_three(void) {
+void three(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, LOW);
   digitalWrite(AC, HIGH);
@@ -94,7 +94,7 @@ void a_three(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '4'
-void a_four(void) {
+void four(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
   digitalWrite(AC, LOW);
@@ -105,7 +105,7 @@ void a_four(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '5'
-void a_five(void) {
+void five(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
   digitalWrite(AC, HIGH);
@@ -116,7 +116,7 @@ void a_five(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '6'
-void a_six(void) {
+void six(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
   digitalWrite(AC, HIGH);
@@ -127,7 +127,7 @@ void a_six(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '7'
-void a_seven(void) {
+void seven(void) {
   digitalWrite(AA, LOW);
   digitalWrite(AB, LOW);
   digitalWrite(AC, HIGH);
@@ -138,7 +138,7 @@ void a_seven(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '8'
-void a_eight(void) {
+void eight(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
   digitalWrite(AC, HIGH);
@@ -149,7 +149,7 @@ void a_eight(void) {
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '9'
-void a_nine(void) {
+void nine(void) {
   digitalWrite(AA, HIGH);
   digitalWrite(AB, HIGH);
   digitalWrite(AC, HIGH);
@@ -160,7 +160,7 @@ void a_nine(void) {
 }
 
 // turns all LEDs on 1st 7SD off
-void a_off(void) {
+void off(void) {
   digitalWrite(AA, LOW);
   digitalWrite(AB, LOW);
   digitalWrite(AC, LOW);
@@ -168,129 +168,6 @@ void a_off(void) {
   digitalWrite(AE, LOW);
   digitalWrite(AF, LOW);
   digitalWrite(AG, LOW);
-}
-
-// functions for 2nd 7SD
-
-// turns on/off certain LEDs on 2nd 7SD to display '0'
-void b_zero(void) {
-  digitalWrite(BA, LOW);
-  digitalWrite(BB, HIGH);
-  digitalWrite(BC, HIGH);
-  digitalWrite(BD, HIGH);
-  digitalWrite(BE, HIGH);
-  digitalWrite(BF, HIGH);
-  digitalWrite(BG, HIGH);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '1'
-void b_one(void) {
-  digitalWrite(BA, LOW);
-  digitalWrite(BB, LOW);
-  digitalWrite(BC, LOW);
-  digitalWrite(BD, HIGH);
-  digitalWrite(BE, LOW);
-  digitalWrite(BF, LOW);
-  digitalWrite(BG, HIGH);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '2'
-void b_two(void) {
-  digitalWrite(BA, HIGH);
-  digitalWrite(BB, LOW);
-  digitalWrite(BC, HIGH);
-  digitalWrite(BD, HIGH);
-  digitalWrite(BE, HIGH);
-  digitalWrite(BF, HIGH);
-  digitalWrite(BG, LOW);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '3'
-void b_three(void) {
-  digitalWrite(BA, HIGH);
-  digitalWrite(BB, LOW);
-  digitalWrite(BC, HIGH);
-  digitalWrite(BD, HIGH);
-  digitalWrite(BE, LOW);
-  digitalWrite(BF, HIGH);
-  digitalWrite(BG, HIGH);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '4'
-void b_four(void) {
-  digitalWrite(BA, HIGH);
-  digitalWrite(BB, HIGH);
-  digitalWrite(BC, LOW);
-  digitalWrite(BD, HIGH);
-  digitalWrite(BE, LOW);
-  digitalWrite(BF, LOW);
-  digitalWrite(BG, HIGH);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '5'
-void b_five(void) {
-  digitalWrite(BA, HIGH);
-  digitalWrite(BB, HIGH);
-  digitalWrite(BC, HIGH);
-  digitalWrite(BD, LOW);
-  digitalWrite(BE, LOW);
-  digitalWrite(BF, HIGH);
-  digitalWrite(BG, HIGH);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '6'
-void b_six(void) {
-  digitalWrite(BA, HIGH);
-  digitalWrite(BB, HIGH);
-  digitalWrite(BC, HIGH);
-  digitalWrite(BD, LOW);
-  digitalWrite(BE, HIGH);
-  digitalWrite(BF, HIGH);
-  digitalWrite(BG, HIGH);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '7'
-void b_seven(void) {
-  digitalWrite(BA, LOW);
-  digitalWrite(BB, LOW);
-  digitalWrite(BC, HIGH);
-  digitalWrite(BD, HIGH);
-  digitalWrite(BE, LOW);
-  digitalWrite(BF, LOW);
-  digitalWrite(BG, HIGH);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '8'
-void b_eight(void) {
-  digitalWrite(BA, HIGH);
-  digitalWrite(BB, HIGH);
-  digitalWrite(BC, HIGH);
-  digitalWrite(BD, HIGH);
-  digitalWrite(BE, HIGH);
-  digitalWrite(BF, HIGH);
-  digitalWrite(BG, HIGH);
-}
-
-// turns on/off certain LEDs on 2nd 7SD to display '9'
-void b_nine(void) {
-  digitalWrite(BA, HIGH);
-  digitalWrite(BB, HIGH);
-  digitalWrite(BC, HIGH);
-  digitalWrite(BD, HIGH);
-  digitalWrite(BE, LOW);
-  digitalWrite(BF, HIGH);
-  digitalWrite(BG, HIGH);
-}
-
-// turns off all LEDs on 2nd 7SD 
-void b_off(void) {
-  digitalWrite(BA, LOW);
-  digitalWrite(BB, LOW);
-  digitalWrite(BC, LOW);
-  digitalWrite(BD, LOW);
-  digitalWrite(BE, LOW);
-  digitalWrite(BF, LOW);
-  digitalWrite(BG, LOW);
 }
 
 void loop(void) {
