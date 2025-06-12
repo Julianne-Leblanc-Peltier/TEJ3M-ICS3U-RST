@@ -262,7 +262,6 @@ void b_off(void) {
   digitalWrite(BG, LOW);
 }
 
-// Start
 void loop(void) {
   int switchValue = digitalRead(SWITCH);
   int secondsCounter;
@@ -270,58 +269,68 @@ void loop(void) {
   
   if (switchValue == HIGH) {
     for (decasecondCounter = 0; decasecondCounter < 10; decasecondCounter ++) {
-      if (decasecondCounter == 0) {
-      	a_zero();
-      } else if (decasecondCounter == 1) {
-      	a_one();
-      } else if (decasecondCounter == 2) {
-      	a_two();
-      } else if (decasecondCounter == 3) {
-      	a_three();
-      } else if (decasecondCounter == 4) {
-      	a_four();
-      } else if (decasecondCounter == 5) {
-      	a_five();
-      } else if (decasecondCounter == 6) {
-      	a_six();
-      } else if (decasecondCounter == 7) {
-      	a_seven();
-      } else if (decasecondCounter == 8) {
-      	a_eight();
-      } else if (decasecondCounter == 9) {
-      	a_nine();
+      switchValue = digitalRead(SWITCH);
+      if (switchValue == HIGH) {
+        if (decasecondCounter == 0) {
+          a_zero();
+        } else if (decasecondCounter == 1) {
+          a_one();
+        } else if (decasecondCounter == 2) {
+          a_two();
+        } else if (decasecondCounter == 3) {
+          a_three();
+        } else if (decasecondCounter == 4) {
+          a_four();
+        } else if (decasecondCounter == 5) {
+          a_five();
+        } else if (decasecondCounter == 6) {
+          a_six();
+        } else if (decasecondCounter == 7) {
+          a_seven();
+        } else if (decasecondCounter == 8) {
+          a_eight();
+        } else if (decasecondCounter == 9) {
+          a_nine();
+        }
+        for (secondsCounter = 0; secondsCounter < 10; secondsCounter ++) {
+          switchValue = digitalRead(SWITCH);
+          if (switchValue == HIGH) {
+            if (secondsCounter == 0) {
+                b_zero();
+            } else if (secondsCounter == 1) {
+                b_one();
+            } else if (secondsCounter == 2) {
+                b_two();
+            } else if (secondsCounter == 3) {
+                b_three();
+            } else if (secondsCounter == 4) {
+                b_four();
+            } else if (secondsCounter == 5) {
+                b_five();
+            } else if (secondsCounter == 6) {
+                b_six();
+            } else if (secondsCounter == 7) {
+                b_seven();
+            } else if (secondsCounter == 8) {
+                b_eight();
+            } else if (secondsCounter == 9) {
+                b_nine();
+            }
+            delay(1000);
+          } else {
+            secondsCounter = 0;
+            a_off();
+            b_off();
+            break;
+          }
+        }
+      } else {
+        decasecondCounter = 0;
+        secondsCounter = 0;
+        a_off();
+        b_off();
+        break;
       }
-
-      for (secondsCounter = 0; secondsCounter < 10; secondsCounter ++)
-        if (secondsCounter == 0) {
-      		b_zero();
-      	} else if (secondsCounter == 1) {
-      		b_one();
-      	} else if (secondsCounter == 2) {
-      		b_two();
-      	} else if (secondsCounter == 3) {
-      		b_three();
-      	} else if (secondsCounter == 4) {
-      		b_four();
-      	} else if (secondsCounter == 5) {
-      		b_five();
-      	} else if (secondsCounter == 6) {
-      		b_six();
-      	} else if (secondsCounter == 7) {
-      		b_seven();
-      	} else if (secondsCounter == 8) {
-      		b_eight();
-      	} else if (secondsCounter == 9) {
-      		b_nine();
-      	}
-      	delay(1000);
-      }
-      delay(1000);
     }
-    a_off();
-    b_off();
-  } else {
-  	a_off();
-  	b_off();
   }
 }
