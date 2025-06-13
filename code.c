@@ -200,7 +200,7 @@ void numberDisplayed(int counter, int arrayOfPins[]) {
 void loop(void) {
   // creates loop counting up using both 7SDs
 
-  // var to rearrayOfPins[3] state of switch
+  // var to read state of switch
   int switchValue = digitalRead(SWITCH);
   
   // declare counters
@@ -211,20 +211,20 @@ void loop(void) {
   if (switchValue == HIGH) {
     // nested loops, counts + displays seconds first then decaseconds
     for (decasecondsCounter = 0; decasecondsCounter < 10; decasecondsCounter ++) {
-      int arrayOfPins[] = {AA, AB, AC, AD, AE, AF, AG};
+      int decasecondsPins[] = {AA, AB, AC, AD, AE, AF, AG};
       switchValue = digitalRead(SWITCH);
       if (switchValue == HIGH) {
-        numberDisplayed(decasecondsCounter, arrayOfPins);
+        numberDisplayed(decasecondsCounter, decasecondsPins);
         for (secondsCounter = 0; secondsCounter < 10; secondsCounter ++) {
-          int arrayOfPins[] = {BA, BB, BC, BD, BE, BF, BG};
+          int secondsPins[] = {BA, BB, BC, BD, BE, BF, BG};
           switchValue = digitalRead(SWITCH);
           if (switchValue == HIGH) {
-            numberDisplayed(secondsCounter, arrayOfPins);
+            numberDisplayed(secondsCounter, secondsPins);
             delay(1000);
           } else {
             // this else statement checks value of switch throughout loop, allows 7SDs to turn off at any point during program
             secondsCounter = 0;
-            off(arrayOfPins);
+            off(secondsPins);
             break;
           }
         }
@@ -232,7 +232,7 @@ void loop(void) {
         // resets all counters and turns decaseconds LEDs off
         decasecondsCounter = 0;
         secondsCounter= 0;
-        off(arrayOfPins);
+        off(decasecondsPins);
         break;
       }
     }
