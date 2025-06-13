@@ -172,6 +172,7 @@ void off(int arrayOfPins[]) {
   digitalWrite(arrayOfPins[6], LOW);
 }
 
+// gets counter (decasecond OR seconds) and determines state of LED (calling other functions)
 void numberDisplayed(int counter, int arrayOfPins[]) {
   if (counter == 0) {
     zero(arrayOfPins);
@@ -228,6 +229,7 @@ void loop(void) {
           }
         }
       } else {
+        // resets all counters and turns decaseconds LEDs off
         decasecondsCounter = 0;
         secondsCounter= 0;
         off(arrayOfPins);
