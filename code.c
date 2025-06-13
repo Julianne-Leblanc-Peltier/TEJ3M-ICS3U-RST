@@ -172,6 +172,30 @@ void off(int arrayOfPins[]) {
   digitalWrite(arrayOfPins[6], LOW);
 }
 
+void numberDisplayed(int counter, int arrayOfPins[]) {
+  if (counter == 0) {
+    zero(arrayOfPins);
+  } else if (counter == 1) {
+    one(arrayOfPins);
+  } else if (counter == 2) {
+    two(arrayOfPins);
+  } else if (counter == 3) {
+    three(arrayOfPins);
+  } else if (counter == 4) {
+    four(arrayOfPins);
+  } else if (counter == 5) {
+    five(arrayOfPins);
+  } else if (counter == 6) {
+    six(arrayOfPins);
+  } else if (counter == 7) {
+    seven(arrayOfPins);
+  } else if (counter == 8) {
+    eight(arrayOfPins);
+  } else if (counter == 9) {
+    nine(arrayOfPins);
+  }
+}
+
 void loop(void) {
   // creates loop counting up using both 7SDs
 
@@ -179,62 +203,22 @@ void loop(void) {
   int switchValue = digitalRead(SWITCH);
   
   // declare counters
+  int decasecondsCounter;
   int secondsCounter;
-  int decasecondCounter;
   
   // will start loop/counting only IF the switch is switched to power
   if (switchValue == HIGH) {
     // nested loops, counts + displays seconds first then decaseconds
-    for (decasecondCounter = 0; decasecondCounter < 10; decasecondCounter ++) {
+    for (decasecondsCounter = 0; decasecondsCounter < 10; decasecondsCounter ++) {
       int arrayOfPins[] = {AA, AB, AC, AD, AE, AF, AG};
       switchValue = digitalRead(SWITCH);
       if (switchValue == HIGH) {
-        if (decasecondCounter == 0) {
-          zero(arrayOfPins);
-        } else if (decasecondCounter == 1) {
-          one(arrayOfPins);
-        } else if (decasecondCounter == 2) {
-          two(arrayOfPins);
-        } else if (decasecondCounter == 3) {
-          three(arrayOfPins);
-        } else if (decasecondCounter == 4) {
-          four(arrayOfPins);
-        } else if (decasecondCounter == 5) {
-          five(arrayOfPins);
-        } else if (decasecondCounter == 6) {
-          six(arrayOfPins);
-        } else if (decasecondCounter == 7) {
-          seven(arrayOfPins);
-        } else if (decasecondCounter == 8) {
-          eight(arrayOfPins);
-        } else if (decasecondCounter == 9) {
-          nine(arrayOfPins);
-        }
+        numberDisplayed(decasecondsCounter, arrayOfPins);
         for (secondsCounter = 0; secondsCounter < 10; secondsCounter ++) {
           int arrayOfPins[] = {BA, BB, BC, BD, BE, BF, BG};
           switchValue = digitalRead(SWITCH);
           if (switchValue == HIGH) {
-            if (secondsCounter == 0) {
-                zero(arrayOfPins);
-            } else if (secondsCounter == 1) {
-                one(arrayOfPins);
-            } else if (secondsCounter == 2) {
-                two(arrayOfPins);
-            } else if (secondsCounter == 3) {
-                three(arrayOfPins);
-            } else if (secondsCounter == 4) {
-                four(arrayOfPins);
-            } else if (secondsCounter == 5) {
-                five(arrayOfPins);
-            } else if (secondsCounter == 6) {
-                six(arrayOfPins);
-            } else if (secondsCounter == 7) {
-                seven(arrayOfPins);
-            } else if (secondsCounter == 8) {
-                eight(arrayOfPins);
-            } else if (secondsCounter == 9) {
-                nine(arrayOfPins);
-            }
+            numberDisplayed(secondsCounter, arrayOfPins);
             delay(1000);
           } else {
             // this else statement checks value of switch throughout loop, allows 7SDs to turn off at any point during program
@@ -244,8 +228,8 @@ void loop(void) {
           }
         }
       } else {
-        decasecondCounter = 0;
-        secondsCounter = 0;
+        decasecondsCounter = 0;
+        secondsCounter= 0;
         off(arrayOfPins);
         break;
       }
