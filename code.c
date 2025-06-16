@@ -23,7 +23,6 @@ unsigned const int BE = 2;
 unsigned const int BF = 1;
 unsigned const int BG = 0;
 
-
 // switch var
 unsigned const int SWITCH = 15;
 
@@ -51,7 +50,6 @@ void setup(void)
 
 // turns on/off certain LEDs on 1st 7SD to display '0'
 void zero(int arrayOfPins[]) {
-
   digitalWrite(arrayOfPins[0], LOW);
   digitalWrite(arrayOfPins[1], HIGH);
   digitalWrite(arrayOfPins[2], HIGH);
@@ -59,7 +57,6 @@ void zero(int arrayOfPins[]) {
   digitalWrite(arrayOfPins[4], HIGH);
   digitalWrite(arrayOfPins[5], HIGH);
   digitalWrite(arrayOfPins[6], HIGH);
-
 }
 
 // turns on/off certain LEDs on 1st 7SD to display '1'
@@ -206,7 +203,7 @@ void loop(void) {
   // declare counters
   int decasecondsCounter;
   int secondsCounter;
-  
+
   // will start loop/counting only IF the switch is switched to power
   if (switchValue == HIGH) {
     // nested loops, counts + displays seconds first then decaseconds
