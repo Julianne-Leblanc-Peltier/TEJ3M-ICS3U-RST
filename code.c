@@ -6,6 +6,7 @@
 
 
 // first 7 segment display
+// unsigned int & LED functions retrieved from https://www.tinkercad.com/things/jHnKkUAsyFg-arduino-7-segment-display
 unsigned const int AA = 13;
 unsigned const int AB = 12;
 unsigned const int AC = 11;
